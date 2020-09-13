@@ -21,13 +21,15 @@ public class PlayerBehavior : MonoBehaviour
 	public Sprite rightSprite = null;
 	public Sprite backSprite = null;
 
-	public GameObject map = null;                             // Carte à afficher
-	public DialogManager dialogDisplayer;                     // Dialogue Manager / S'occupe d'afficher les dialogues
+	public GameObject map = null;							// Carte à afficher
+	public DialogManager dialogDisplayer;					// Dialogue Manager / S'occupe d'afficher les dialogues
 
-	private Dialog closestNPCDialog;                          // Dialogue du NPC le plus proche
+	public bool BlockByNPC { get; set; }					// Bloquer par un NPC ou non
 
-	Rigidbody2D rb2D;                                         // Composant permettant d'appliquer de la physique
-	SpriteRenderer spriteRenderer;                                  // S'occupe d'afficher les sprites
+	private Dialog closestNPCDialog;						// Dialogue du NPC le plus proche
+
+	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
+	SpriteRenderer spriteRenderer;							// S'occupe d'afficher les sprites
 
 	void Awake()
 	{
@@ -46,7 +48,7 @@ public class PlayerBehavior : MonoBehaviour
 	{
 		// Si un dialogue ou une carte est affiché,
 		// le joueur ne doit pas faire d'action
-		if (dialogDisplayer.IsOnScreen() || map.activeSelf)
+		if (dialogDisplayer.IsOnScreen() || map.activeSelf || BlockByNPC)
 		{
 			return;
 		}
