@@ -134,7 +134,11 @@ public class PlayerBehavior : MonoBehaviour
 		{
 			if (closestNPCDialog != null)
 			{
+<<<<<<< Updated upstream
 				dialogDisplayer.SetDialog(closestNPCDialog.GetDialog());
+=======
+				dialogDisplayer.SetDialog(closestNPCDialog.GetDialog());	//Il récupère le dialogue enregistrer dans le NPC
+>>>>>>> Stashed changes
 			}
 			else
 			{

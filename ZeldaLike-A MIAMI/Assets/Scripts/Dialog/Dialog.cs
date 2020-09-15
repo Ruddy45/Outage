@@ -11,7 +11,11 @@ using UnityEngine;
 // Dialogue
 public class Dialog : MonoBehaviour
 {
+<<<<<<< Updated upstream
 	public List<DialogPage> dialogWithPlayer;                          // Liste des dialogues avec le joueur
+=======
+	public List<DialogPage> dialogWithPlayer;      // Liste des dialogues avec le joueur
+>>>>>>> Stashed changes
 
 	// Permet à un autre composant de récupérer la liste
 	public List<DialogPage> GetDialog()
