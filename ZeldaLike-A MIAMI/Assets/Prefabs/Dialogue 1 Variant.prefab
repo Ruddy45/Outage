@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 5231008688333416663, guid: 2847b2645551bbe40913ba3ab7d19df2,
         type: 3}
       propertyPath: dialogWithPlayer.Array.data[1].text
-      value: "Qu'est-ce que vous faite l\xE0 ?"
+      value: "Qu'est-ce que vous faites l\xE0 ?"
       objectReference: {fileID: 0}
     - target: {fileID: 5231008688333416663, guid: 2847b2645551bbe40913ba3ab7d19df2,
         type: 3}

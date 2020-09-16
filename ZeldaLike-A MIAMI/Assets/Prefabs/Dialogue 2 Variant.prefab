@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1331940482087814361, guid: 33c0923f9f20fe144a4ea95a6125682f,
         type: 3}
       propertyPath: m_Name
-      value: Dialogue 2
+      value: Dialogue 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1331940482087814340, guid: 33c0923f9f20fe144a4ea95a6125682f,
         type: 3}
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 1331940482087814342, guid: 33c0923f9f20fe144a4ea95a6125682f,
         type: 3}
       propertyPath: dialogWithPlayer.Array.data[2].text
-      value: Et la prochaine fois j'appel la police !!!!!!
+      value: Et la prochaine fois, j'appelle la police !!!!!!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c0923f9f20fe144a4ea95a6125682f, type: 3}

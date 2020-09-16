@@ -71,40 +71,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogWithPlayer:
-  - text: espace pour faire avancer le texte
+  - text: '... [Espace pour continuer]'
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "Patron : Bonjour Je suis le Patron d\u2019EDF et j\u2019ai une mission
-      pour vous. agents de la FAEE, \u201CPatrick\u201D."
+  - text: "... : Bonjour, je suis le Patron d'EDF et j'\x19ai une mission pour vous,
+      agent de la FAEE. Votre nom de code pour cette op\xE9ration sera \x1CPatrick\x1D."
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "H\xE9ro : D\xE9soler je suis \xE0 la retraite, je ne fais plus ce genre
-      de boulot."
+  - text: "Patrick : D\xE9sol\xE9, mais je suis \xE0 la retraite. Je ne fais plus
+      ce genre de boulot."
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: 'Patron : Je sais, Naturellement.'
+  - text: 'Patron : Je sais, naturellement.'
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "Mais je sais aussi que vous avez de nombreuses dettes envers nous et que
-      vous n\u2019avez personne d\u2019autre sur qui compter dans votre entourage.
-      Voyez cela comme un cadeaux de ma part"
+  - text: "Patron : Mais je sais aussi que vous avez encore de nombreuses dettes envers
+      nous et que vous ne pouvez compter sur personne d'\x19autre dans votre entourage.
+      Voyez cela comme un cadeau de ma part."
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "H\xE9ro : Plut\xF4t un cadeaux empoisonn\xE9e vus que je n\u2019ai pas
-      le choix."
+  - text: "Patrick : Plut\xF4t un cadeau empoisonn\xE9."
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "Patron : Donc, votre mission sera de couper le courant au propri\xE9taire
-      qui non pas payer leur facture depuis mars."
+  - text: "Patron : Donc, votre mission sera de couper le courant aux propri\xE9taires
+      qui n'ont pas pay\xE9 leurs factures depuis Mars."
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "Tous les moyens sont bons seul compte le r\xE9sultat, vous pouvez donc
-      p\xE9n\xE9trer par effractions dans leur domicile."
+  - text: "Patron : Tous les moyens sont bons. Seul le r\xE9sultat nous importe, vous
+      pouvez donc entrer par effractions dans leurs domiciles. "
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "Cependant je dois vous pr\xE9venir que si jamais vous vous faite prendre
-      par la gendarmerie ou la police nous d\xE9clinons toute responsabilit\xE9s,
-      vous serez livrer \xE0 vous m\xEAme."
+  - text: "Patron : Cependant, je dois vous pr\xE9venir que si jamais vous vous faites
+      prendre par la police nous d\xE9nierons toutes responsabilit\xE9s. Vous serez
+      livr\xE9 \xE0 vous m\xEAme. "
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: Fin de communication.
+  - text: '[Fin de communication]'
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "H\xE9ro : Attendez comment \xE7a \u2026"
+  - text: "Patrick : Attendez comment \xE7a \u2026"
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: BIP...Bip...bip.......
+  - text: BIP... Bip... bip... ...
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: "H\xE9ro : \u2026"
+  - text: "Patrick : \u2026"
     color: {r: 0, g: 0, b: 0, a: 1}
-  - text: Eh ben, je suis dans de beau drap.
+  - text: 'Patrick : Eh ben, je suis dans de beaux draps.'
     color: {r: 0, g: 0, b: 0, a: 1}
