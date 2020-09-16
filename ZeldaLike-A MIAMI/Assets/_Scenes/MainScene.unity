@@ -20156,13 +20156,10 @@ PrefabInstance:
       propertyPath: dialogWithPlayer.Array.data[0].color.b
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 1042966102618824, guid: 7b5b7bea8ddbf234bb724c5bd78bca16, type: 3}
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5b7bea8ddbf234bb724c5bd78bca16, type: 3}
 --- !u!4 &996464387 stripped
@@ -20171,15 +20168,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 996464386}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!4 &1177400045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4424277261815878, guid: 7b5b7bea8ddbf234bb724c5bd78bca16,
     type: 3}
   m_PrefabInstance: {fileID: 996464386}
   m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1 &1267605827
 GameObject:
   m_ObjectHideFlags: 0
@@ -28583,8 +28577,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1970685526
 GameObject:
   m_ObjectHideFlags: 0
@@ -28711,7 +28703,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> Stashed changes
 --- !u!1 &2042169534
 GameObject:
   m_ObjectHideFlags: 0
@@ -28809,8 +28800,6 @@ Transform:
   m_Father: {fileID: 1307985747}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &5231008688167234727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28885,4 +28874,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2847b2645551bbe40913ba3ab7d19df2, type: 3}
->>>>>>> Stashed changes
