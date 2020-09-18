@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Wesley.unity
-    guid: 6ecdaaa9e98d8c143ab7f3c824567722
+    path: Assets/_Scenes/MainScene.unity
+    guid: af77b70f3ebb84f48b5d1296354ea61a
   m_configObjects: {}
