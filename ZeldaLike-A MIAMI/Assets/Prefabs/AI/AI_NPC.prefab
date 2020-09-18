@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2151003810302274322}
   - component: {fileID: 2151003810302274320}
+  - component: {fileID: 2151003809661637692}
   - component: {fileID: 2151003810302274321}
   - component: {fileID: 2151003810302274327}
   - component: {fileID: 2151003810302274324}
@@ -17,6 +18,7 @@ GameObject:
   - component: {fileID: 1776093933}
   - component: {fileID: 1776093935}
   - component: {fileID: 2151003810302274323}
+  - component: {fileID: 7254138204404040148}
   m_Layer: 0
   m_Name: AI_NPC
   m_TagString: Untagged
@@ -86,6 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2151003809661637692
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151003810302274333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 7
 --- !u!58 &2151003810302274321
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,11 +130,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 10
-  m_Speed: 70
+  m_Speed: 50
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 42
+  m_StoppingDistance: 25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -165,7 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 2151003810302274327}
   _objectToFollow: {fileID: 0}
-  _blockPlayer: 0
+  _blockPlayer: 1
+  _blockPlayerDirection: 3
 --- !u!114 &1776093935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +211,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e620a935b19ec45bf6530fbfe89790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7254138204404040148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151003810302274333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965f914471615ff4386e4d6e9eef0126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjetDialog:
+  - {fileID: 1331940482087814361, guid: 33c0923f9f20fe144a4ea95a6125682f, type: 3}
+  - {fileID: 5349692051863510138, guid: 6b191a4b71b15d54a9d05fdbc79d566e, type: 3}
+  - {fileID: 3547824097718973333, guid: eef36f7424e571d43b14f6df500e6e6c, type: 3}
+  _playerTag: Player
+  _hitSound:
+    _clip: {fileID: 8300000, guid: 63c000fc0e57c1541ac42b79ce703f01, type: 3}
+    _volume: 0.2
+    _pitch: 1
