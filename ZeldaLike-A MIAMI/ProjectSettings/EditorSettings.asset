@@ -23,3 +23,5 @@ EditorSettings:
   m_EnableTextureStreamingInEditMode: 1
   m_EnableTextureStreamingInPlayMode: 1
   m_AsyncShaderCompilation: 1
+
+  m_UserGeneratedProjectSuffix: 
