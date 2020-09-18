@@ -21,13 +21,16 @@ public class PlayerBehavior : MonoBehaviour
 	public Sprite rightSprite = null;
 	public Sprite backSprite = null;
 
-	public GameObject map = null;                             // Carte à afficher
-	public DialogManager dialogDisplayer;                     // Dialogue Manager / S'occupe d'afficher les dialogues
+	public GameObject map = null;                           // Carte à afficher
+	public DialogManager dialogDisplayer;                   // Dialogue Manager / S'occupe d'afficher les dialogues
 
-	private Dialog closestNPCDialog;                          // Dialogue du NPC le plus proche
+	public bool BlockByNPC { get; set; }                    // Bloquer par un NPC ou non
+	public CardinalDirections BlockDirection { get; set; }	// Bloque le joueur dans une direction précise
 
-	Rigidbody2D rb2D;                                         // Composant permettant d'appliquer de la physique
-	SpriteRenderer spriteRenderer;                                  // S'occupe d'afficher les sprites
+	private Dialog closestNPCDialog;						// Dialogue du NPC le plus proche
+
+	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
+	SpriteRenderer spriteRenderer;							// S'occupe d'afficher les sprites
 
 	void Awake()
 	{
@@ -63,11 +66,6 @@ public class PlayerBehavior : MonoBehaviour
 		// Valeur de déplacement sur l'axe Y
 		float verticalOffset = Input.GetAxis("Vertical");
 
-		// Utilise les inputs de l'utilisateur pour les multiplier par la vitesse de déplacement
-		Vector2 newPos = new Vector2(transform.position.x + horizontalOffset * speed,
-									 transform.position.y + verticalOffset * speed);
-		rb2D.MovePosition(newPos);
-
 		// Donne la direction principal du joueur
 		if (Mathf.Abs(horizontalOffset) > Mathf.Abs(verticalOffset))
 		{
@@ -91,6 +89,31 @@ public class PlayerBehavior : MonoBehaviour
 				direction = CardinalDirections.CARDINAL_S;
 			}
 		}
+
+		// Si le joueur est bloqué par un NPC et 
+		// si la direction choisi et celle bloqué
+		if (BlockByNPC)
+		{
+			horizontalOffset = InputWithBlockDirection(horizontalOffset, CardinalDirections.CARDINAL_E, CardinalDirections.CARDINAL_W);
+			verticalOffset = InputWithBlockDirection(verticalOffset, CardinalDirections.CARDINAL_N, CardinalDirections.CARDINAL_S);
+		}
+
+		// Utilise les inputs de l'utilisateur pour les multiplier par la vitesse de déplacement
+		Vector2 newPos = new Vector2(transform.position.x + horizontalOffset * speed,
+									 transform.position.y + verticalOffset * speed);
+		rb2D.MovePosition(newPos);
+	}
+
+	// Donne les valeurs inputs quand le joueur est bloqué par le NPC
+	private float InputWithBlockDirection(float input, CardinalDirections max, CardinalDirections minus)
+	{
+		// Si on veut aller dans le même sens que l'une des directions
+		if (BlockDirection == max && 0 < input || BlockDirection == minus && input < 0)
+		{
+			input = 0;
+		}
+
+		return input;
 	}
 
 	/// <summary>
