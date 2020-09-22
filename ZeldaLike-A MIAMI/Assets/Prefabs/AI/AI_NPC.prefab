@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 1776093933}
   - component: {fileID: 1387035211}
   - component: {fileID: 1387035209}
-  - component: {fileID: 2151003810302274323}
   - component: {fileID: 7254138204404040148}
+  - component: {fileID: 2151003810302274323}
   m_Layer: 0
   m_Name: AI_NPC
   m_TagString: Untagged
@@ -185,7 +185,7 @@ MonoBehaviour:
   _agent: {fileID: 2151003810302274327}
   _fieldOfView: {fileID: 1387035209}
   _nextState: {fileID: 1387035211}
-  _stoppingDistance: 0
+  _stoppingDistance: 25
   _blockPlayer: 0
   _blockPlayerDirection: 3
 --- !u!114 &1387035211
@@ -226,18 +226,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   _delay: 0.2
---- !u!114 &2151003810302274323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2151003810302274333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e620a935b19ec45bf6530fbfe89790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7254138204404040148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,5 +245,17 @@ MonoBehaviour:
   _playerTag: Player
   _hitSound:
     _clip: {fileID: 8300000, guid: 63c000fc0e57c1541ac42b79ce703f01, type: 3}
-    _volume: 0.2
+    _volume: 0.05
     _pitch: 1
+--- !u!114 &2151003810302274323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151003810302274333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e620a935b19ec45bf6530fbfe89790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

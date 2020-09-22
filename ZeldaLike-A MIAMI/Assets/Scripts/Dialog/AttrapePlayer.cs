@@ -15,7 +15,8 @@ public class AttrapePlayer : MonoBehaviour
 			if (collision.tag == _playerTag)
 			{
 				//On créer le gameobject qu'il y a dans l'emplacement 0 de la liste ObjetDialog.
-				Instantiate(ObjetDialog[0], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+				var clone = Instantiate(ObjetDialog[0], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+				clone.SetActive(true);
 				//On supprime l'emplacement 0 ensuite et l'emplacement 1 devient le 0 et ainsi de suite.
 				ObjetDialog.RemoveAt(0);
 			}
