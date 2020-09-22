@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &115697611
 Transform:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274949966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.5, y: -24.1, z: 0}
+  m_LocalPosition: {x: 43.9, y: -3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2019,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &856937885
 Transform:
   m_ObjectHideFlags: 0
@@ -3288,17 +3288,7 @@ PrefabInstance:
       objectReference: {fileID: 274949970}
     - target: {fileID: 1776093933, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c, type: 3}
       propertyPath: _blockPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151003810302274327, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
-        type: 3}
-      propertyPath: m_Speed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151003810302274327, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c, type: 3}
@@ -8399,19 +8389,5 @@ PrefabInstance:
       propertyPath: _blockPlayer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1776093933, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c, type: 3}
-      propertyPath: _blockPlayerDirection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151003810302274326, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
-        type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 274949971}
-    - target: {fileID: 2151003810302274326, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
-        type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c, type: 3}
