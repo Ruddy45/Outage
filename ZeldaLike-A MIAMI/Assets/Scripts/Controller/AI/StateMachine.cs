@@ -14,26 +14,31 @@ public class StateMachine : MonoBehaviour
 	// Charge automatiquement les états présent sur le gameObject
 	private void OnValidate() => _states = GetComponents<State>();
 
-	private void Start()
+	private void Awake()
 	{
+		foreach (var state in _states)
+		{
+			state.StateMachine = this;
+		}
+
 		// Récupère les inputs
 		_inputs = GetComponent<InputController>();
 		// État initial
 		SwitchState(0);
 	}
 
-	private void Update()
-	{
-		// Change le mode de déplacement dans l'odre de la liste
-		if (_inputs.ChangeNPCMoveMode)
-		{
-			SwitchNextState();
-		}
+	// Exécute l'état actuel
+	private void Update() => _currentState?.Execute();
 
-		// Exécute l'état actuel
-		_currentState?.Execute();
+	// Permet à un état de changer d'état
+	public void ChangeState(State nextState)
+	{
+		_currentState?.Exit();
+		_currentState = nextState;
+		_currentState?.Enter();
 	}
 
+	#region SwitchStateDebug
 	// Change d'état dans le sens de la liste pour revenir au début
 	private void SwitchNextState()
 	{
@@ -62,4 +67,5 @@ public class StateMachine : MonoBehaviour
 
 		Debug.Log($"Switch State to : {_currentState.GetType()}");
 	}
+	#endregion
 }

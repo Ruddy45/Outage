@@ -13,11 +13,9 @@ public class DebugMovementState : State
 	private Ray _ray = new Ray();                                       // Ray permettant de savoir si on touche quelquechose ou non
 	private RaycastHit _hit = new RaycastHit();                         // Informations sur ce que l'on a touché
 
-	// Initialise l'agent avec le parent : State
 	// Initialise la camera en la cherchant dans la scene
-	protected override void OnValidate()
+	private void OnValidate()
 	{
-		base.OnValidate();
 		_camera = Camera.main;
 	}
 
@@ -35,6 +33,8 @@ public class DebugMovementState : State
 		}
 	}
 
+	public override void Enter() { }
+
 	// Exécuter le mouvement de la souris
 	public override void Execute()
 	{
@@ -51,4 +51,6 @@ public class DebugMovementState : State
 			}
 		}
 	}
+
+	public override void Exit() { }
 }

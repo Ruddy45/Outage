@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 2151003810302274324}
   - component: {fileID: 1776093934}
   - component: {fileID: 1776093933}
-  - component: {fileID: 1776093935}
+  - component: {fileID: 1387035211}
+  - component: {fileID: 1387035209}
   - component: {fileID: 2151003810302274323}
   m_Layer: 0
   m_Name: AI_NPC
@@ -112,11 +113,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 10
-  m_Speed: 70
+  m_Speed: 50
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 42
+  m_StoppingDistance: 25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _states:
   - {fileID: 1776093933}
-  - {fileID: 1776093935}
+  - {fileID: 1387035211}
 --- !u!114 &1776093933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,9 +165,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 2151003810302274327}
-  _objectToFollow: {fileID: 0}
+  _fieldOfView: {fileID: 1387035209}
+  _nextState: {fileID: 1387035211}
+  _stoppingDistance: 0
   _blockPlayer: 0
---- !u!114 &1776093935
+  _blockPlayerDirection: 3
+--- !u!114 &1387035211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,11 +179,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 2151003810302274333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97735505d69420a4a975c44fb044ca20, type: 3}
+  m_Script: {fileID: 11500000, guid: d5b34a7b48e428c4e8e0fd5c1e0a8133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 2151003810302274327}
-  _camera: {fileID: 0}
+  _fieldOfView: {fileID: 1387035209}
+  _nextState: {fileID: 1776093933}
+  _stoppingDistance: 0
+  _waypoints: []
+--- !u!114 &1387035209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151003810302274333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bf478d011c6254c89164c9d00a2244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewRadius: 60
+  _viewAngle: 70
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  _delay: 0.2
 --- !u!114 &2151003810302274323
 MonoBehaviour:
   m_ObjectHideFlags: 0
