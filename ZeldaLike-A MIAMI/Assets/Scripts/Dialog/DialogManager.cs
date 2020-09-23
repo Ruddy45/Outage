@@ -4,6 +4,7 @@
  * 
  */
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,8 @@ public class DialogManager : MonoBehaviour
 {
 	public Text renderText;                                             // Texte dans lequel le dialogue est écrit
 	private List<DialogPage> dialogToDisplay;                           // Dialogues à écrire
+
+	public Action OnEndDialogue;										// Évènement de fin de dialogue
 
 	// Définie le dialogue à afficher
 	public void SetDialog(List<DialogPage> dialogToAdd)
@@ -55,6 +58,7 @@ public class DialogManager : MonoBehaviour
 		}
 		else
 		{
+			EndDialogue();
 			gameObject.SetActive(false);
 		}
 
@@ -66,8 +70,7 @@ public class DialogManager : MonoBehaviour
 	}
 
 	// Si un dialogue est actuellement à l'écran
-	public bool IsOnScreen()
-	{
-		return gameObject.activeSelf;
-	}
+	public bool IsOnScreen() => gameObject.activeSelf;
+
+	public void EndDialogue() => OnEndDialogue?.Invoke();
 }

@@ -8,6 +8,7 @@ public class MoralChoice : MonoBehaviour
 	[SerializeField] private DialogManager _dialogManager = null;   // Permet d'afficher le texte de fin
 	[SerializeField] private Dialog _outageDialog = null;			// Dialogue de coupure de courant
 	[SerializeField] private Dialog _quitJobDialog = null;          // Dialogue où il démissionne
+	[SerializeField] private WinAndLose _winManager = null;			// Permet d'afficher l'écran de win ou lose
 
 	private void Start() => _uiContainer.SetActive(false);
 
@@ -27,6 +28,8 @@ public class MoralChoice : MonoBehaviour
 	{
 		_uiContainer.SetActive(false);
 		_dialogManager.SetDialog(_outageDialog.GetDialog());
+
+		_dialogManager.OnEndDialogue += _winManager.Win;
 	}
 
 	// Quitte son job, mais laisse le courant
@@ -34,6 +37,8 @@ public class MoralChoice : MonoBehaviour
 	{
 		_uiContainer.SetActive(false);
 		_dialogManager.SetDialog(_quitJobDialog.GetDialog());
+
+		_dialogManager.OnEndDialogue += _winManager.Win;
 	}
 
 	private void Pause() => Time.timeScale = 0f;
