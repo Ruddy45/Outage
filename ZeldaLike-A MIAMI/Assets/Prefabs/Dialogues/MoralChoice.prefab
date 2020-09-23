@@ -77,6 +77,7 @@ MonoBehaviour:
   _dialogManager: {fileID: 0}
   _outageDialog: {fileID: 5819648857945869152}
   _quitJobDialog: {fileID: 5819648857945869183}
+  _winManager: {fileID: 0}
 --- !u!114 &5819648857945869152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +93,12 @@ MonoBehaviour:
   dialogWithPlayer:
   - text: 'Patrick : C''est bon, c''est fait.'
     color: {r: 0, g: 0, b: 0, a: 1}
+  - text: 'Patron : Bien.'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: 'Patron : Tu peux maintenant profiter pleinement de ta retraite.'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: "Patrick : Jusqu'\xE0 la prochaine mission, je suppose."
+    color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &5819648857945869183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,4 +113,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogWithPlayer:
   - text: 'Patrick : J''en ai marre.'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: "Patron : Si tu ne le fais pas, j'enverrais juste un autre agent. Au final,
+      cela revient au m\xEAme."
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: 'Patrick : ...'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: "Patrick : Pas tout \xE0 fait, puisque je ne serais pas l'auteur."
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: 'Patron : ... et les dettes?'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: '[Fin de communication]'
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - text: 'Patrick : Comme si j''allais les payer.'
     color: {r: 0, g: 0, b: 0, a: 1}
