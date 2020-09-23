@@ -63,11 +63,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
@@ -81,9 +76,5 @@ ZeldaLike-A MIAMI/Logs/
 ZeldaLike-A MIAMI/obj/
 
 ZeldaLike-A MIAMI/Packages/
-<<<<<<< Updated upstream
-=======
 
 ZeldaLike-A MIAMI/Temp/
->>>>>>> Stashed changes
->>>>>>> Stashed changes
