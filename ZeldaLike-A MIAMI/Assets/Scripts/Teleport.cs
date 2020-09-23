@@ -29,7 +29,7 @@ public class Teleport : MonoBehaviour
 		}
 	}
 
-	// Change la position du joueur
+	// Change la position du joueur et le laisse se déplacer sans être bloquer
 	private void TeleportPlayer()
 	{
 		if (teleportTo != null)
@@ -40,6 +40,7 @@ public class Teleport : MonoBehaviour
 				teleportTo.transform.parent.gameObject.SetActive(true);
 
 				player.transform.position = teleportTo.transform.position;
+				player.GetComponent<PlayerBehavior>().BlockByNPC = false;
 			}
 		}
 	}
