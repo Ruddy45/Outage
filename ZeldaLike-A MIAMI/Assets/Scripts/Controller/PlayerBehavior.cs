@@ -7,7 +7,7 @@
 using UnityEngine;
 
 // Direction du personnage
-public enum CardinalDirections { CARDINAL_S, CARDINAL_N, CARDINAL_W, CARDINAL_E };
+public enum CardinalDirections { CARDINAL_S, CARDINAL_N, CARDINAL_W, CARDINAL_E};
 
 // Comportement du joueur
 public class PlayerBehavior : MonoBehaviour
@@ -15,25 +15,26 @@ public class PlayerBehavior : MonoBehaviour
 	public float speed = 1f;                                  // Vitesse de déplacement
 	private CardinalDirections direction;                     // Actuel direction du joueur
 
-	// Sprite selon la direction du joueur
-	public Sprite frontSprite = null;
-	public Sprite leftSprite = null;
-	public Sprite rightSprite = null;
-	public Sprite backSprite = null;
+	//animation du personnage
+	Animator animationSens;
 
-	public GameObject map = null;                             // Carte à afficher
-	public DialogManager dialogDisplayer;                     // Dialogue Manager / S'occupe d'afficher les dialogues
+	public GameObject map = null;                           // Carte à afficher
+	public DialogManager dialogDisplayer;                   // Dialogue Manager / S'occupe d'afficher les dialogues
 
-	private Dialog closestNPCDialog;                          // Dialogue du NPC le plus proche
+	public bool BlockByNPC { get; set; }                    // Bloquer par un NPC ou non
+	public CardinalDirections BlockDirection { get; set; }	// Bloque le joueur dans une direction précise
 
-	Rigidbody2D rb2D;                                         // Composant permettant d'appliquer de la physique
-	SpriteRenderer spriteRenderer;                                  // S'occupe d'afficher les sprites
+	private Dialog closestNPCDialog;						// Dialogue du NPC le plus proche
+
+	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
+	SpriteRenderer spriteRenderer;							// S'occupe d'afficher les sprites
 
 	void Awake()
 	{
 		// Initialise les variables en utilisant les composants du GameObject
 		rb2D = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		animationSens = GetComponent<Animator>();
 
 		closestNPCDialog = null;
 	}
@@ -63,14 +64,18 @@ public class PlayerBehavior : MonoBehaviour
 		// Valeur de déplacement sur l'axe Y
 		float verticalOffset = Input.GetAxis("Vertical");
 
-		// Utilise les inputs de l'utilisateur pour les multiplier par la vitesse de déplacement
-		Vector2 newPos = new Vector2(transform.position.x + horizontalOffset * speed,
-									 transform.position.y + verticalOffset * speed);
-		rb2D.MovePosition(newPos);
+		// Si le joueur est bloqué par un NPC et 
+		// si la direction choisi et celle bloqué
+		if (BlockByNPC)
+		{
+			horizontalOffset = InputWithBlockDirection(horizontalOffset, CardinalDirections.CARDINAL_E, CardinalDirections.CARDINAL_W);
+			verticalOffset = InputWithBlockDirection(verticalOffset, CardinalDirections.CARDINAL_N, CardinalDirections.CARDINAL_S);
+		}
 
 		// Donne la direction principal du joueur
 		if (Mathf.Abs(horizontalOffset) > Mathf.Abs(verticalOffset))
 		{
+			animationSens.SetBool("marche", true);
 			if (horizontalOffset > 0)
 			{
 				direction = CardinalDirections.CARDINAL_E;
@@ -82,6 +87,7 @@ public class PlayerBehavior : MonoBehaviour
 		}
 		else if (Mathf.Abs(horizontalOffset) < Mathf.Abs(verticalOffset))
 		{
+			animationSens.SetBool("marche", true);
 			if (verticalOffset > 0)
 			{
 				direction = CardinalDirections.CARDINAL_N;
@@ -91,6 +97,29 @@ public class PlayerBehavior : MonoBehaviour
 				direction = CardinalDirections.CARDINAL_S;
 			}
 		}
+		else if (0 < Mathf.Abs(horizontalOffset) && (Mathf.Abs(horizontalOffset) == Mathf.Abs(verticalOffset)))
+		{
+			animationSens.SetBool("marche", true);
+		}
+		else { animationSens.SetBool("marche", false); }
+		
+
+		// Utilise les inputs de l'utilisateur pour les multiplier par la vitesse de déplacement
+		Vector2 newPos = new Vector2(transform.position.x + horizontalOffset * speed,
+									 transform.position.y + verticalOffset * speed);
+		rb2D.MovePosition(newPos);
+	}
+
+	// Donne les valeurs inputs quand le joueur est bloqué par le NPC
+	private float InputWithBlockDirection(float input, CardinalDirections max, CardinalDirections minus)
+	{
+		// Si on veut aller dans le même sens que l'une des directions
+		if (BlockDirection == max && 0 < input || BlockDirection == minus && input < 0)
+		{
+			input = 0;
+		}
+
+		return input;
 	}
 
 	/// <summary>
@@ -121,7 +150,7 @@ public class PlayerBehavior : MonoBehaviour
 			return;
 		}
 
-		// Change le sprite du personnage selon la direction du joueur
+		// Change l'animation du personnage selon la direction du joueur
 		ChangeSpriteToMatchDirection();
 
 		///<summary>
@@ -149,19 +178,23 @@ public class PlayerBehavior : MonoBehaviour
 	{
 		if (direction == CardinalDirections.CARDINAL_N)
 		{
-			spriteRenderer.sprite = backSprite;
+			animationSens.SetInteger("direction_animation",(int)direction);
+			Debug.Log(animationSens.GetInteger("direction_animation"));
 		}
 		else if (direction == CardinalDirections.CARDINAL_S)
 		{
-			spriteRenderer.sprite = frontSprite;
+			animationSens.SetInteger("direction_animation",(int)direction);
+			Debug.Log(animationSens.GetInteger("direction_animation"));
 		}
 		else if (direction == CardinalDirections.CARDINAL_E)
 		{
-			spriteRenderer.sprite = rightSprite;
+			animationSens.SetInteger("direction_animation",(int)direction);
+			Debug.Log(animationSens.GetInteger("direction_animation"));
 		}
 		else if (direction == CardinalDirections.CARDINAL_W)
 		{
-			spriteRenderer.sprite = leftSprite;
+			animationSens.SetInteger("direction_animation",(int)direction);
+			Debug.Log(animationSens.GetInteger("direction_animation"));
 		}
 	}
 
