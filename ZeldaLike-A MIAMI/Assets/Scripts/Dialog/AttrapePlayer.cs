@@ -5,7 +5,8 @@ public class AttrapePlayer : MonoBehaviour
 {
 	public List<GameObject> ObjetDialog;
 	[SerializeField] private string _playerTag = "Player";			// Tag permettant d'identifier un joueur
-	[SerializeField] private AudioGroup _hitSound;					// Son à jouer en colision avec un obstacle
+	[SerializeField] private AudioGroup _hitSound;                  // Son à jouer en colision avec un obstacle
+	[SerializeField] private WinAndLose _winManager = null;         // Permet d'afficher l'écran de win ou lose
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -23,7 +24,7 @@ public class AttrapePlayer : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("perdu");
+			_winManager.Lose();
 		}
 	}
 

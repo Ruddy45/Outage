@@ -241,12 +241,12 @@ MonoBehaviour:
   ObjetDialog:
   - {fileID: 1331940482087814361, guid: 33c0923f9f20fe144a4ea95a6125682f, type: 3}
   - {fileID: 5349692051863510138, guid: 6b191a4b71b15d54a9d05fdbc79d566e, type: 3}
-  - {fileID: 3547824097718973333, guid: eef36f7424e571d43b14f6df500e6e6c, type: 3}
   _playerTag: Player
   _hitSound:
     _clip: {fileID: 8300000, guid: 63c000fc0e57c1541ac42b79ce703f01, type: 3}
     _volume: 0.05
     _pitch: 1
+  _winManager: {fileID: 0}
 --- !u!114 &2151003810302274323
 MonoBehaviour:
   m_ObjectHideFlags: 0
