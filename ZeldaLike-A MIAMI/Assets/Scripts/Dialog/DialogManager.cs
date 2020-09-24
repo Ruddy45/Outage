@@ -4,6 +4,7 @@
  * 
  */
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +22,30 @@ public struct DialogPage
 public class DialogManager : MonoBehaviour
 {
 	public Text renderText;                                             // Texte dans lequel le dialogue est écrit
+	[SerializeField] private AudioGroup _dialogSong = new AudioGroup(); // Son à joueur lors du dialogue
+
+	// Si un dialogue est actuellement à l'écran
+	public bool IsOnScreen => gameObject.activeSelf;
+	private bool IsThereAnotherDialog => dialogToDisplay.Count > 0;     // S'il y a un autre dialogue à afficher
+
+	private Coroutine _writeDialogue = null;								// Coroutine du texte permettant de l'arrêter
 	private List<DialogPage> dialogToDisplay;                           // Dialogues à écrire
+
+	// Update is called once per frame
+	void Update()
+	{
+		if (renderText == null)
+		{
+			gameObject.SetActive(false);
+		}
+
+		// Supprime la premiére page quand le joueur appuie sur la barre espace
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			dialogToDisplay.RemoveAt(0);    //On suprrime un emplacement de la liste avec son contenu
+			DisplayDialog();
+		}
+	}
 
 	// Définie le dialogue à afficher
 	public void SetDialog(List<DialogPage> dialogToAdd)
@@ -36,38 +60,38 @@ public class DialogManager : MonoBehaviour
 			}
 
 			gameObject.SetActive(true);
+			DisplayDialog();
 		}
 	}
 
-	// Update is called once per frame
-	void Update()
+	private void DisplayDialog()
 	{
-		if (renderText == null)
-		{
-			gameObject.SetActive(false);
-		}
-
 		// Affiche un dialogue tant qu'il en reste dans la liste
-		if (dialogToDisplay.Count > 0)
-		{
-			renderText.text = dialogToDisplay[0].text;      //RenderText.text récupère le texte qu'il y a dans la liste
+		if (IsThereAnotherDialog)
+		{ 
+			// Efface la coroutine déjà présente si le joueur skip le texte
+			if (_writeDialogue != null)
+			{
+				StopCoroutine(_writeDialogue);
+			}
+
+			_writeDialogue = StartCoroutine(WriteDialogue());
 			renderText.color = dialogToDisplay[0].color;    //RenderText.color récupère la couleur qu'il y a dans la liste
+			AudioManager.instance.PlaySound(_dialogSong);
 		}
 		else
 		{
 			gameObject.SetActive(false);
 		}
-
-		// Supprime la premiére page quand le joueur appuie sur la barre espace
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			dialogToDisplay.RemoveAt(0);    //On suprrime un emplacement de la liste avec son contenu
-		}
 	}
 
-	// Si un dialogue est actuellement à l'écran
-	public bool IsOnScreen()
+	private IEnumerator WriteDialogue()
 	{
-		return gameObject.activeSelf;
+		renderText.text = "";
+		foreach (var letter in dialogToDisplay[0].text)
+		{
+			renderText.text += letter;
+			yield return new WaitForEndOfFrame();
+		}
 	}
 }

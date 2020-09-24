@@ -316,6 +316,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderText: {fileID: 660282199}
+  _dialogSong:
+    _clip: {fileID: 8300000, guid: 7dad81c87ec39ab4ca7e27c31041ed29, type: 3}
+    _volume: 0.1
+    _pitch: 0.8
 --- !u!1 &115697610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,7 +3126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1590024446
 Transform:
   m_ObjectHideFlags: 0
@@ -8969,12 +8973,12 @@ PrefabInstance:
     - target: {fileID: 2151003810302274322, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 2151003810302274322, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 2151003810302274322, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
         type: 3}

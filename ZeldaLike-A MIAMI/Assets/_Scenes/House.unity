@@ -5472,6 +5472,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1981096929275050280, guid: 6b1d3f0fbc40e2f4089bd3e5f63f34bd,
+        type: 3}
+      propertyPath: _dialogSong._volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981096929275050280, guid: 6b1d3f0fbc40e2f4089bd3e5f63f34bd,
+        type: 3}
+      propertyPath: _dialogSong._pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1981096930221986092, guid: 6b1d3f0fbc40e2f4089bd3e5f63f34bd,
         type: 3}
       propertyPath: m_LocalPosition.x
