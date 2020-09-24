@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 // État de mouvement pour suivre un objet
-[RequireComponent(typeof(FieldOfView))]
 public class FollowState : State
 {
 	[SerializeField] private bool _blockPlayer = false;						// Si le NPC doit bloquer le joueur

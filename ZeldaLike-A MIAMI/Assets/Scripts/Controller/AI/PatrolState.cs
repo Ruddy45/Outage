@@ -27,8 +27,6 @@ public class PatrolState : State
 		{
 			NextWaypoint();
 		}
-
-		Debug.Log(_agent.desiredVelocity);
 	}
 
 	public override void Exit() { }
