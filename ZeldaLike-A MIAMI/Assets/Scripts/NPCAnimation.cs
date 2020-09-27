@@ -7,8 +7,7 @@ public class NPCAnimation : MonoBehaviour
 	[SerializeField] private NavMeshAgent _agent = null;            // Agent et valeur de déplacement
 	[SerializeField] private Transform _agentView = null;           // Vue de l'agent sur laquelle on effectue une rotation
 	[SerializeField] private Animator _animator = null;             // Animation du personnage
-	[SerializeField]
-	private DirectionAndAngle[] _directionAndAngle = // Donne l'angle à prendre pour l'agent view selon la direction
+	[SerializeField] private DirectionAndAngle[] _directionAndAngle = // Donne l'angle à prendre pour l'agent view selon la direction
 		new DirectionAndAngle[4];
 
 	private CardinalDirections _direction;                          // Actuel direction du joueur
@@ -63,7 +62,7 @@ public class NPCAnimation : MonoBehaviour
 		{
 			_animator.SetBool("marche", true);
 		}
-		else if (_agent.desiredVelocity == Vector3.zero)
+		else if(_agent.desiredVelocity == Vector3.zero)
 		{
 			_animator.SetBool("marche", false);
 		}
