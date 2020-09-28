@@ -67,6 +67,6 @@ public class PatrolState : State
 	{
 		_waypoints = new Transform[1];
 		_waypoints.SetValue(objectPatrol, 0);
-		NextWaypoint();
+		//NextWaypoint();
 	}
 }

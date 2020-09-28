@@ -12640,7 +12640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1073678435
 Transform:
   m_ObjectHideFlags: 0
@@ -16384,6 +16384,10 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[10]
       value: 
       objectReference: {fileID: 2067817652}
+    - target: {fileID: 1387035211, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c, type: 3}
+      propertyPath: _stoppingDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8621551225396208424, guid: 8fa34fc0d8fc4e14e9a1ffd7a479448c,
         type: 3}
       propertyPath: _winManager
@@ -16509,12 +16513,12 @@ PrefabInstance:
     - target: {fileID: 850431539490987745, guid: 9537a2af373a86149b3273cd99bd685d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 850431539490987745, guid: 9537a2af373a86149b3273cd99bd685d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -66.7
+      value: -67.1
       objectReference: {fileID: 0}
     - target: {fileID: 850431539490987745, guid: 9537a2af373a86149b3273cd99bd685d,
         type: 3}
@@ -20675,7 +20679,7 @@ PrefabInstance:
     - target: {fileID: 1947707124262847479, guid: 6b1d3f0fbc40e2f4089bd3e5f63f34bd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b1d3f0fbc40e2f4089bd3e5f63f34bd, type: 3}
@@ -22262,7 +22266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2060927729
 Transform:
   m_ObjectHideFlags: 0
