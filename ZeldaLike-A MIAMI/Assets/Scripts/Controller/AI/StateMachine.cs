@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-// Oblige d'avoir un component input controller sur le gameObject
-[RequireComponent(typeof(InputController))]
 // S'occupe de la gestion des états
 public class StateMachine : MonoBehaviour
 {
@@ -9,7 +7,6 @@ public class StateMachine : MonoBehaviour
 
 	private State _currentState = null;                             // État actuellement utilisé
 	private int _currentIndex = 0;									// Index de l'état utilisé
-	private InputController _inputs = null;                         // Récupère les inputs du NPC
 
 	// Charge automatiquement les états présent sur le gameObject
 	private void OnValidate() => _states = GetComponents<State>();
@@ -17,12 +14,8 @@ public class StateMachine : MonoBehaviour
 	private void Awake()
 	{
 		foreach (var state in _states)
-		{
 			state.StateMachine = this;
-		}
 
-		// Récupère les inputs
-		_inputs = GetComponent<InputController>();
 		// État initial
 		SwitchState(0);
 	}

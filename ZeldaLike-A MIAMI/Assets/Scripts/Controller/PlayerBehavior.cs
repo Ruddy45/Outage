@@ -29,13 +29,11 @@ public class PlayerBehavior : MonoBehaviour
 	private interact interact;							// Interagire avec les items d'interaction
 
 	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
-	SpriteRenderer spriteRenderer;							// S'occupe d'afficher les sprites
-
+	
 	void Awake()
 	{
 		// Initialise les variables en utilisant les composants du GameObject
 		rb2D = GetComponent<Rigidbody2D>();
-		spriteRenderer = GetComponent<SpriteRenderer>();
 		animationSens = GetComponent<Animator>();
 
 		closestNPCDialog = null;
@@ -179,29 +177,7 @@ public class PlayerBehavior : MonoBehaviour
 
 	// Change le sprite du joueur selon la direction
 	// (back when going North, front when going south, right when going east, left when going west)
-	private void ChangeSpriteToMatchDirection()
-	{
-		if (direction == CardinalDirections.CARDINAL_N)
-		{
-			animationSens.SetInteger("direction_animation",(int)direction);
-			Debug.Log(animationSens.GetInteger("direction_animation"));
-		}
-		else if (direction == CardinalDirections.CARDINAL_S)
-		{
-			animationSens.SetInteger("direction_animation",(int)direction);
-			Debug.Log(animationSens.GetInteger("direction_animation"));
-		}
-		else if (direction == CardinalDirections.CARDINAL_E)
-		{
-			animationSens.SetInteger("direction_animation",(int)direction);
-			Debug.Log(animationSens.GetInteger("direction_animation"));
-		}
-		else if (direction == CardinalDirections.CARDINAL_W)
-		{
-			animationSens.SetInteger("direction_animation",(int)direction);
-			Debug.Log(animationSens.GetInteger("direction_animation"));
-		}
-	}
+	private void ChangeSpriteToMatchDirection() => animationSens.SetInteger("direction_animation", (int)direction);
 
 	/// <summary>
 	/// Appeler automatiquement par Unity quand un élément RENTRE dans une zone "trigger"
