@@ -19,7 +19,6 @@ public class MoralChoice : MonoBehaviour
 		{
 			Pause();
 			_uiContainer.SetActive(true);
-			AudioManager.instance.StopMusic();
 		}
 	}
 
@@ -28,6 +27,7 @@ public class MoralChoice : MonoBehaviour
 	{
 		_uiContainer.SetActive(false);
 		_dialogManager.SetDialog(_outageDialog.GetDialog());
+		AudioManager.instance.StopMusic();
 
 		_dialogManager.OnEndDialogue += _winManager.Win;
 	}
@@ -37,6 +37,7 @@ public class MoralChoice : MonoBehaviour
 	{
 		_uiContainer.SetActive(false);
 		_dialogManager.SetDialog(_quitJobDialog.GetDialog());
+		AudioManager.instance.StopMusic();
 
 		_dialogManager.OnEndDialogue += _winManager.Win;
 	}
