@@ -129,14 +129,6 @@ public class PlayerBehavior : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		// Si le joueur appuie sur M, l'affichage de la carte change
-		// Si la carte est caché, alors elle s'affiche
-		// Si la carte est visible, alors elle se cache
-		if (Input.GetKeyDown(KeyCode.M))
-		{
-			map.SetActive(!map.activeSelf);
-		}
-
 		// Quitte le jeu sur la touche Echap
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{

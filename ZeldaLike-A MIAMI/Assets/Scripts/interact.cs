@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class interact : MonoBehaviour
 {
-
 	public GameObject on = null;
 
 	public GameObject off = null;
+	[SerializeField] private PatrolState _ia = null;		// IA qui patrouille
 
 	public void tilesexchanger()
 	{
-		Debug.Log("interact");
+		_ia?.AddObjectPatrol(transform);
 		on.SetActive(false);
 		off.SetActive(true);
 	}

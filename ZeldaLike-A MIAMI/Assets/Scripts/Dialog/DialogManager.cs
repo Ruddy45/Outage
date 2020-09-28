@@ -23,13 +23,12 @@ public struct DialogPage
 public class DialogManager : MonoBehaviour
 {
 	public Text renderText;                                             // Texte dans lequel le dialogue est écrit
-	[SerializeField] private AudioGroup _dialogSong = new AudioGroup(); // Son à joueur lors du dialogue
 
 	// Si un dialogue est actuellement à l'écran
 	public bool IsOnScreen => gameObject.activeSelf;
 	private bool IsThereAnotherDialog => dialogToDisplay.Count > 0;     // S'il y a un autre dialogue à afficher
 
-	private Coroutine _writeDialogue = null;								// Coroutine du texte permettant de l'arrêter
+	private Coroutine _writeDialogue = null;							// Coroutine du texte permettant de l'arrêter
 	private List<DialogPage> dialogToDisplay;                           // Dialogues à écrire
 
 	public Action OnEndDialogue;										// Évènement de fin de dialogue
@@ -80,7 +79,6 @@ public class DialogManager : MonoBehaviour
 
 			_writeDialogue = StartCoroutine(WriteDialogue());
 			renderText.color = dialogToDisplay[0].color;    //RenderText.color récupère la couleur qu'il y a dans la liste
-			AudioManager.instance.PlaySound(_dialogSong);
 		}
 		else
 		{
