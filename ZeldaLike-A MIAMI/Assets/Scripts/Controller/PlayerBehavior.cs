@@ -24,7 +24,9 @@ public class PlayerBehavior : MonoBehaviour
 	public bool BlockByNPC { get; set; }                    // Bloquer par un NPC ou non
 	public CardinalDirections BlockDirection { get; set; }	// Bloque le joueur dans une direction précise
 
-	private Dialog closestNPCDialog;						// Dialogue du NPC le plus proche
+	private Dialog closestNPCDialog;                        // Dialogue du NPC le plus proche
+
+	private interact interact;							// Interagire avec les items d'interaction
 
 	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
 	SpriteRenderer spriteRenderer;							// S'occupe d'afficher les sprites
@@ -167,7 +169,10 @@ public class PlayerBehavior : MonoBehaviour
 			}
 			else
 			{
-
+				if (interact)
+				{
+					interact.tilesexchanger();
+				}
 			}
 		}
 	}
@@ -219,6 +224,10 @@ public class PlayerBehavior : MonoBehaviour
 				dialogDisplayer.SetDialog(instantDialog.GetDialog());
 			}
 		}
+		else if (collision.tag == "Interaction")
+        {
+			interact = collision.GetComponent<interact>();
+        }
 	}
 
 	/// <summary>
@@ -238,5 +247,9 @@ public class PlayerBehavior : MonoBehaviour
 		{
 			Destroy(collision.gameObject);
 		}
+		else if (collision.tag == "Interaction")
+        {
+			interact = null;
+        }
 	}
 }
