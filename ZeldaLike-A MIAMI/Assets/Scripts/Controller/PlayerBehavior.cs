@@ -20,13 +20,14 @@ public class PlayerBehavior : MonoBehaviour
 
 	public GameObject map = null;                           // Carte à afficher
 	public DialogManager dialogDisplayer;                   // Dialogue Manager / S'occupe d'afficher les dialogues
+	[SerializeField] private GameObject _uiInteract;		// UI d'interaction à afficher / cacher
 
 	public bool BlockByNPC { get; set; }                    // Bloquer par un NPC ou non
 	public CardinalDirections BlockDirection { get; set; }	// Bloque le joueur dans une direction précise
 
 	private Dialog closestNPCDialog;                        // Dialogue du NPC le plus proche
 
-	private interact interact;							// Interagire avec les items d'interaction
+	private interact interact;								// Interagir avec les items d'interaction
 
 	Rigidbody2D rb2D;										// Composant permettant d'appliquer de la physique
 	
@@ -128,7 +129,14 @@ public class PlayerBehavior : MonoBehaviour
 	/// ne demandant pas le calcul de physique (pas le RigidBody)
 	/// </summary>
 	private void Update()
-	{
+	{        
+		// If the player presses M, the map will be activated if not on screen
+		// or desactivated if already on screen
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+			map.SetActive(!map.activeSelf);
+		}
+
 		// Quitte le jeu sur la touche Echap
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -162,6 +170,7 @@ public class PlayerBehavior : MonoBehaviour
 				if (interact)
 				{
 					interact.tilesexchanger();
+					_uiInteract.SetActive(false);
 				}
 			}
 		}
@@ -195,6 +204,11 @@ public class PlayerBehavior : MonoBehaviour
 		else if (collision.tag == "Interaction")
         {
 			interact = collision.GetComponent<interact>();
+
+			if (!interact.IsOff)
+			{
+				_uiInteract.SetActive(true);
+			}
         }
 	}
 
@@ -218,6 +232,7 @@ public class PlayerBehavior : MonoBehaviour
 		else if (collision.tag == "Interaction")
         {
 			interact = null;
-        }
+			_uiInteract.SetActive(false);
+		}
 	}
 }

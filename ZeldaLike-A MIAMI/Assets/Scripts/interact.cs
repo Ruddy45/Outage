@@ -7,7 +7,9 @@ public class interact : MonoBehaviour
 	public GameObject on = null;
 
 	public GameObject off = null;
-	[SerializeField] private PatrolState _ia = null;		// IA qui patrouille
+	[SerializeField] private PatrolState _ia = null;        // IA qui patrouille
+
+	public bool IsOff => off.activeSelf;
 
 	public void tilesexchanger()
 	{

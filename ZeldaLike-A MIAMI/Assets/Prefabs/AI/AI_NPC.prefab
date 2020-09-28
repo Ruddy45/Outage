@@ -116,7 +116,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.081293106, y: -0.8653183}
   serializedVersion: 2
-  m_Radius: 21.304756
+  m_Radius: 16
 --- !u!114 &8621551225396208424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   _playerTag: Player
   _hitSound:
     _clip: {fileID: 8300000, guid: 63c000fc0e57c1541ac42b79ce703f01, type: 3}
-    _volume: 0.005
+    _volume: 0.05
     _pitch: 1
   _winManager: {fileID: 0}
 --- !u!1 &2151003810302274333
