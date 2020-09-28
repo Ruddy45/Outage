@@ -49,7 +49,7 @@ public class PlayerBehavior : MonoBehaviour
 	{
 		// Si un dialogue ou une carte est affiché,
 		// le joueur ne doit pas faire d'action
-		if (dialogDisplayer.IsOnScreen() || map.activeSelf)
+		if (dialogDisplayer.IsOnScreen || map.activeSelf)
 		{
 			return;
 		}
@@ -147,7 +147,7 @@ public class PlayerBehavior : MonoBehaviour
 
 		// Si un dialogue ou une carte est affiché,
 		// le joueur ne doit pas faire d'action
-		if (dialogDisplayer.IsOnScreen() || map.activeSelf)
+		if (dialogDisplayer.IsOnScreen || map.activeSelf)
 		{
 			return;
 		}

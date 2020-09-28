@@ -274,6 +274,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderText: {fileID: 1981096928717491496}
+  _dialogSong:
+    _clip: {fileID: 8300000, guid: 7dad81c87ec39ab4ca7e27c31041ed29, type: 3}
+    _volume: 0.1
+    _pitch: 0.8
 --- !u!1 &1981096929641772820
 GameObject:
   m_ObjectHideFlags: 0

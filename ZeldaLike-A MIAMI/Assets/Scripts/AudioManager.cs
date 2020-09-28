@@ -19,7 +19,7 @@ public struct AudioGroup
 	public float Pitch => _pitch;
 
 	// Constructeurs de la Struct
-	public AudioGroup(AudioClip clipToPlay, float volume = 1.0f, float pitch = 1.0f)
+	public AudioGroup(AudioClip clipToPlay = null, float volume = 1.0f, float pitch = 1.0f)
 	{
 		_clip = clipToPlay;
 		_volume = volume;
