@@ -18,6 +18,12 @@ public class NPCAnimation : MonoBehaviour
 		[SerializeField] private CardinalDirections _direction;
 		[SerializeField] private float _angle;
 
+		public DirectionAndAngle(float angle, CardinalDirections direction)
+		{
+			_angle = angle;
+			_direction = direction;
+		}
+
 		public CardinalDirections Direction => _direction;
 		public float Angle => _angle;
 	}

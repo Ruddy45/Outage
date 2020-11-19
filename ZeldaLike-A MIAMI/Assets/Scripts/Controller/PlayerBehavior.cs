@@ -20,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
 
 	public GameObject map = null;                           // Carte à afficher
 	public DialogManager dialogDisplayer;                   // Dialogue Manager / S'occupe d'afficher les dialogues
-	[SerializeField] private GameObject _uiInteract;		// UI d'interaction à afficher / cacher
+	[SerializeField] private GameObject _uiInteract = null;	// UI d'interaction à afficher / cacher
 
 	public bool BlockByNPC { get; set; }                    // Bloquer par un NPC ou non
 	public CardinalDirections BlockDirection { get; set; }	// Bloque le joueur dans une direction précise

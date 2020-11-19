@@ -13,7 +13,7 @@ public class FollowGameObject : MonoBehaviour
 
 	// A chaque frame, la camera se place sur le joueur en x et y
 	// le z reste celui définie sur la camera
-	void Update()
+	private void Update()
 	{
 		transform.position = new Vector3(objectToFollow.transform.position.x,
 											  objectToFollow.transform.position.y,

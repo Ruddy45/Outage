@@ -96,5 +96,6 @@ public class DialogManager : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 	}
+
 	public void EndDialogue() => OnEndDialogue?.Invoke();
 }

@@ -245,19 +245,8 @@ MonoBehaviour:
   _agent: {fileID: 2151003810302274327}
   _fieldOfView: {fileID: 788845097}
   _nextState: {fileID: 1776093933}
-  _stoppingDistance: 0.1
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _stoppingDistance: 3
+  _waypoints: []
 --- !u!1 &7610131639856255503
 GameObject:
   m_ObjectHideFlags: 0

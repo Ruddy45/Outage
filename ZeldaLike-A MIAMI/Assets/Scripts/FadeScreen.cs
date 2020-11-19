@@ -11,13 +11,13 @@ public class FadeScreen : MonoBehaviour
 	private void Fade()
 	{
 		_animation.Play();
-		_dialogManager.OnEndDialogue -= Fade;
-		StartCoroutine(Destroy());
+		StartCoroutine(Destroy(_animation.clip.length));
 	}
 
-	private IEnumerator Destroy()
+	public IEnumerator Destroy(float length)
 	{
-		yield return new WaitForSecondsRealtime(_animation.clip.length);
+		yield return new WaitForSecondsRealtime(length);
+		_dialogManager.OnEndDialogue -= Fade;
 		Destroy(gameObject);
 	}
 }
